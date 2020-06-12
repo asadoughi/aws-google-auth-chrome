@@ -13,8 +13,7 @@
 	"default_title": "aws-google-auth"
     },
     "permissions": [
-	"https://signin.aws.amazon.com/saml",
-	"tabs",
+	"activeTab",
 	"storage"
     ],
     "options_page": "options.html"
