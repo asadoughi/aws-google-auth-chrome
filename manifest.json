@@ -1,21 +1,21 @@
 {
-  "name": "Injecta",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "Injecting stuff",
-  "homepage_url": "http://danharper.me",
-  "background": {
-    "scripts": [
-      "background.js"
+    "name": "aws-google-auth",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "AssumeRoleWithSAML",
+    "background": {
+	"scripts": [
+	    "background.js"
+	],
+	"persistent": true
+    },
+    "browser_action": {
+	"default_title": "aws-google-auth"
+    },
+    "permissions": [
+	"https://signin.aws.amazon.com/saml",
+	"tabs",
+	"storage"
     ],
-    "persistent": true
-  },
-  "browser_action": {
-    "default_title": "Inject!"
-  },
-  "permissions": [
-    "https://*/*",
-    "http://*/*",
-    "tabs"
-  ]
+    "options_page": "options.html"
 }

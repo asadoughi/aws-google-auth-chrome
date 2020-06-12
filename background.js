@@ -1,9 +1,18 @@
-// this is the background code...
-
-// listen for our browerAction to be clicked
 chrome.browserAction.onClicked.addListener(function (tab) {
-	// for the current tab, inject the "inject.js" file & execute it
+    chrome.storage.local.get({
+	durationSeconds: 3600,
+	principalArn: ""
+    }, function(config) {
 	chrome.tabs.executeScript(tab.ib, {
-		file: 'inject.js'
+	    code: 'document.aws_google_auth_config = ' + JSON.stringify(config)
+	}, function (any) {
+	    chrome.tabs.executeScript(tab.ib, {
+		file: 'aws-sdk-2.685.0.min.js'
+	    }, function (any) {
+		chrome.tabs.executeScript(tab.ib, {
+		    file: 'inject.js'
+		});
+	    });
 	});
+    });
 });
