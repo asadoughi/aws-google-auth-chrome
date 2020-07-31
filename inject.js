@@ -37,7 +37,7 @@
 		const skey = data.Credentials.SecretAccessKey;
 		const stok = data.Credentials.SessionToken;
 
-		msg = role + "<br />";
+		msg = "# " + role + "<br />";
 		msg += "export AWS_ACCESS_KEY_ID=" + akey + "<br />export AWS_SECRET_ACCESS_KEY=" + skey + "<br />export AWS_SESSION_TOKEN=" + stok;
 		msg += "<br /><br />";
 		document.write(msg);
